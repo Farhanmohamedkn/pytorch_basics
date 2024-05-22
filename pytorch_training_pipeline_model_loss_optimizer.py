@@ -1,10 +1,10 @@
 
 
 
-# step 1: prediction(using linear regression)
-# step 2: gradient computation
-# step3: loss computation
-# step 4: parameter updates
+# step 1: prediction(using linear regression) (MANUALLY.....)
+# step 2: gradient computation(using pytorch)
+# step3: loss computation(using pytorch)
+# step 4: parameter updates(using pytorch)
 
 # Compute every step using pytorch 
 
