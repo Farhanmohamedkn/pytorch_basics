@@ -39,7 +39,7 @@ print(f'Prediction before training: f(5) = {forward(5):.3f}') #so if x is 5 then
 
 # Training
 learning_rate = 0.01
-n_iters = 20
+n_iters = 200
 
 for epoch in range(n_iters):
     # predict = forward pass

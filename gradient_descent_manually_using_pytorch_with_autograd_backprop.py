@@ -62,22 +62,29 @@ for epoch in range(n_iters):
     
     
     # calculate gradients = backward pass pytorch
-    l.backward()
+    l.backward() #this will calculate the slope for us
 
 
     
     # update weights
     #w.data = w.data - learning_rate * w.grad
     with torch.no_grad():
-        w -= learning_rate * w.grad
+        w -= learning_rate * w.grad #this part should not be a part of our computational graph so we use "with no grad" function to clear menory each time
 
     
     
     # zero the gradients after updating
-    w.grad.zero_()
+    w.grad.zero_() #if we don use it we get a value more than which is obviosly wrong becs our formula is 2x 
+    # so basically to clear the w.grad attribute so our gradients are zero again
+
+
+
 
     if epoch % 10 == 0: # so we can see the weight and loss in each 10 episode or epoch
         print(f'epoch {epoch+1}: w = {w:.3f}, loss = {l:.8f}')
+     
+
+
      
 print(f'Prediction after training: f(5) = {forward(5):.3f}') # see our prediction after training is 10 
 # if you observe the output u can see that theweights are increase gradually and loss is reducing
