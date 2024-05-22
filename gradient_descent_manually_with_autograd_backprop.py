@@ -33,7 +33,7 @@ def gradient(x, y, y_pred):
 
 print(f'Prediction before training: f(5) = {forward(5):.3f}') #so if x is 5 then f should be 10 but before training its zero beacuse of our weights
 
-#after training we get 10 or close to 10 our actual vallue for function f(5)
+#after training we get 10 or close to 10 our actual vallue for function f(5) bcz our formula is 2X
 
 #lets do training
 
@@ -54,7 +54,9 @@ for epoch in range(n_iters):
     # update weights
     w -= learning_rate * dw
 
-    if epoch % 2 == 0:
+    if epoch % 2 == 0: # so we can see the weight and loss in each episode or epoch
         print(f'epoch {epoch+1}: w = {w:.3f}, loss = {l:.8f}')
      
 print(f'Prediction after training: f(5) = {forward(5):.3f}') # see our prediction after training is 9.62 close to 10
+# if you observe the output u can see that theweights are increase graduklly and loss is reducing
+# means slope is increasing thus more learning (dx/dy) 
